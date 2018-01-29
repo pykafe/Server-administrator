@@ -58,7 +58,11 @@ passwd: password updated successfully
     	Other []:
   Is the information correct? [Y/n]
   ```
-  **Step 3. install nginx no konfigura nginx**
+  Uza command usermod hodi hatama user ba iha grupu sudo nian.
+
+  `$ usermod -aG sudo username`
+
+**Step 3. install nginx no konfigura nginx**
 
 `$ sudo apt-get install nginx`
 
@@ -128,8 +132,6 @@ $ sudo mkdir -p /var/www/test.com/
 ```
 
 **Kria index page**
-
-Now that we have our directory structure set up, let's create a default page for each of our sites so that we will have something to display.
 
 Depois kria root directory, bele kria index page kada situs ida-idak nian.
 

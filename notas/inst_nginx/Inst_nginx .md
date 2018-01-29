@@ -1,4 +1,4 @@
-# Setup server iha ubuntu 16.04
+# Setup server ho nginx iha ubuntu 16.04
 #### 1. Introdusaun
 
 Nginx mak web server ida nebe popular iha mundu no responsabiliza ba hosting husi situs highest-traffic site nian no internet nebe ass liu, diak liu kompara ho apache nebe hetan kazu barak no uza hanesan web server ou proxy.

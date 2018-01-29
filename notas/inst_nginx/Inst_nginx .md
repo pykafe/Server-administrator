@@ -205,7 +205,7 @@ Depois ita kria hotu bele run server IP address http://172.166.100.4/ iha browse
 
 
 
-###Notas 
+### Notas 
 
 Diferensia entre server configuration sites-enable ho site-available ?
 

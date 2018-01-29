@@ -201,7 +201,7 @@ Depois edit hotu tuir mai reload no run status hodi hare error
            └─2342 nginx: worker process                           
 ```
 
-Depois ita kria hotu bele run server IP address iha browser hodi hare nia rezultadu.
+Depois ita kria hotu bele run server IP address http://172.166.100.4/ iha browser hodi hare nia rezultadu.
 
 
 

@@ -167,16 +167,16 @@ Edit server file server tuir file nebe ita kria ona ho naran domain nebe iha :`
 server {
         listen 80;
         listen [::]:80;
-        
-        root /var/www/test.com/;
-        index index.html index.htm index.nginx-debian.html;
 
-        server_name test.com www.test.com;
+        server_name test.com;
+        root /var/www/text.com;
+        index index.html;
 
         location / {
                 try_files $uri $uri/ =404;
         }
 }
+
 ```
 
 Depois edit hotu tuir mai reload no run status hodi hare error

@@ -158,10 +158,14 @@ Bele halo mudansa iha file `index.html` nia laran.
 **Step 5. Kria  file server .**
 
 loke file server tuir kria file server kada domain ida.
-
-`$ sudo nano /etc/nginx/sites-available/test.com`
-
-Edit server file server tuir file nebe ita kria ona ho naran domain nebe iha :`																																																																																																																																																																																																																																																																																																													
+   1. cd /etc/nginx/sites-available
+      - default
+   2. touch default
+      - default.bak
+      - default
+   3. default
+   
+Edit server file server tuir file nebe ita kria ona ho naran domain nebe iha :																																																																																																																																																																																																																																																																																																			
 
 ```
 server {
@@ -178,6 +182,12 @@ server {
 }
 
 ```
+Hamos file default enabled
+1. cd /etc/nginx/sites-enabled
+- rm default
+
+2. ln -s /etc/nginx/sites-available/default  /etc/nginx/sites-enabled/default
+
 
 Depois edit hotu tuir mai reload no run status hodi hare error
 

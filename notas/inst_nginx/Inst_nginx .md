@@ -119,11 +119,11 @@ Output
 
 depois install nginx run :
 
-`/etc/nginx/sites-available/` ho `/etc/nginx/sites-enable/`
+`$ /etc/nginx/sites-available/` ho `/etc/nginx/sites-enable/`
 
 automatika kria file path hanesan tuir mai nee;
 
-`/var/www/html`
+`$ /var/www/html`
 
 exemplu tuir kria file:
 
@@ -165,14 +165,14 @@ loke file server tuir kria file server kada domain ida.
       - default.bak
       - default
    $ nano default
+   ```
    
 Edit server file server tuir file nebe ita kria ona ho naran domain nebe iha :																																																																																																																																																																																																																																																																																																			
 
 ```
 server {
         listen 80;
-        listen [::]:80;
-
+       
         server_name test;
         root /var/www/text.com;
         index index.html;
@@ -181,13 +181,13 @@ server {
                 try_files $uri $uri/ =404;
         }
 }
-
 ```
+
 Hamos file default enabled
+
 ```
 $ cd /etc/nginx/sites-enabled
 $ rm default
-
 $ ln -s /etc/nginx/sites-available/default  /etc/nginx/sites-enabled/default
 ```
 

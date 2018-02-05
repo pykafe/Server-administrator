@@ -6,27 +6,20 @@ Nginx mak web server ida nebe popular iha mundu no responsabiliza ba hosting hus
 Iha kontextu ida nee ita sei koalia konaba maneira nebe uza ka hetan iha server Ubuntu 16.04.
 
 #### 2. Requirementu/Kriteria
-
 1. Antes atu hahu mata dalan ida nee, ita tenki iha regular non-root user  nebe ho estimeua sudo iha konfigurasaun server. 
 
 2. Ita presiza hatene oinsa mak atu halo konfigurasaun user account tuir matan dalan server hahu ho 16.04.
 
-   ​
-
 #### 3. Hahu kria server
-
 **Step 1. kria public/private ssh key** 
 
 1.  Prosesu kria public ssh keys
 2.  print ssh key
 
-
    `$ cat ~/.ssh/id_rsa.pub`
-
 ```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCgKBUVlVVNnGBigJzvAa/ryOHMRPGxZiY66SMxh5RrVsA05kj4IUb6U0Cqf3pgBJSxF5tY2s6g8m7wM923RNRdvC5gsORKpe0FMgIQ== joanicobarros@gmail.com
 ```
-
 2. Exekuta ka login ba ita boot nia server hanesan root user
 
 `$ ssh root@server_ip_address`
@@ -71,39 +64,26 @@ Depois prosesu install nginx hotu tuir bele check web server ho maneira hanesan 
 Ita bele check ho `systemd` init system hodi exekuta tuir tipu nebe iha.
 
 Hapara ou  web server, bele run tipu ida nee:
-
 ```
 $ sudo systemctl stop nginx
-
 ```
-
 Hahu web server wainhira ita hapara ho tipu ida nee:
 
 ```
 $ sudo systemctl start nginx
-
 ```
-
 Hapara no depois hahu fila fali ho tipu ida nee:
-
 ```
 $ sudo systemctl restart nginx
-
 ```
-
 Karik ita muda konfigurasaun Nginx bele reload bebeik la ho dropping connection, bele halo ho command ida nee:
-
 ```
 $ sudo systemctl reload nginx
-
 ```
-
 Check server ho tipu ida nee:
-
 ```
 $ sudo systemctl status nginx
 ```
-
 ```
 Output
 ● nginx.service - A high performance web server and a reverse proxy server
@@ -126,24 +106,18 @@ automatika kria file path hanesan tuir mai nee;
 `$ /var/www/html`
 
 exemplu tuir kria file:
-
 ```
 $ sudo mkdir -p /var/www/test.com/
 ```
-
 **Kria index page**
 
 Depois kria root directory, bele kria index page kada situs ida-idak nian.
-
 Kria `index.html` file iha domain:
 
 ```
 $ nano /var/www/test.com/index.html
-
 ```
-
 Bele halo mudansa iha file `index.html` nia laran.
-
 ```
 <html>
     <head>
@@ -166,31 +140,27 @@ loke file server tuir kria file server kada domain ida.
       - default
    $ nano default
    ```
-   
 Edit server file server tuir file nebe ita kria ona ho naran domain nebe iha :																																																																																																																																																																																																																																																																																																			
 
 ```
 server {
-        listen 80;
-       
+        listen 80; ## Hare a ipv4; Iha line ida nee deafault port 80
+        #listen   [::]:80 default ipv6only=on;
         server_name test;
-        root /var/www/text.com;
+        root /var/www/text.com; # Nee root ba directory nebe ita kria index page niaa.
         index index.html;
 
-        location / {
-                try_files $uri $uri/ =404;
+        location / { 
+                try_files $uri $uri/ =404; 
         }
 }
 ```
-
 Hamos file default enabled
-
 ```
 $ cd /etc/nginx/sites-enabled
 $ rm default
 $ ln -s /etc/nginx/sites-available/default  /etc/nginx/sites-enabled/default
 ```
-
 Depois edit hotu tuir mai reload no run status hodi hare error
 
 `$ sudo nginx -s reload`
@@ -212,7 +182,6 @@ Depois edit hotu tuir mai reload no run status hodi hare error
            ├─2341 nginx: master process /usr/sbin/nginx -g daemon on; master_pro
            └─2342 nginx: worker process                           
 ```
-
 Depois ita kria hotu bele run server IP address http://172.166.100.4/ iha browser hodi hare nia rezultadu.
 
 
@@ -223,8 +192,6 @@ Diferensia entre server configuration sites-enable ho site-available ?
 
 - sites-enable mak file ida nebe ita link husi file original site-available nian.
 - site-available mak file original nebe ita rai iha file directory.
-
-
 
 ### Referensia :
 

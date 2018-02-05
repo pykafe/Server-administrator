@@ -158,12 +158,13 @@ Bele halo mudansa iha file `index.html` nia laran.
 **Step 5. Kria  file server .**
 
 loke file server tuir kria file server kada domain ida.
-   1. cd /etc/nginx/sites-available
+   ```
+   $ cd /etc/nginx/sites-available
       - default
-   2. touch default
+   $ touch default
       - default.bak
       - default
-   3. default
+   $ nano default
    
 Edit server file server tuir file nebe ita kria ona ho naran domain nebe iha :																																																																																																																																																																																																																																																																																																			
 

@@ -172,7 +172,7 @@ server {
         listen 80;
         listen [::]:80;
 
-        server_name test.com;
+        server_name test;
         root /var/www/text.com;
         index index.html;
 
@@ -183,11 +183,12 @@ server {
 
 ```
 Hamos file default enabled
-1. cd /etc/nginx/sites-enabled
-- rm default
+```
+$ cd /etc/nginx/sites-enabled
+$ rm default
 
-2. ln -s /etc/nginx/sites-available/default  /etc/nginx/sites-enabled/default
-
+$ ln -s /etc/nginx/sites-available/default  /etc/nginx/sites-enabled/default
+```
 
 Depois edit hotu tuir mai reload no run status hodi hare error
 
